@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class route</title>
+    <style>
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Welcome, {{user.getUsername()}}</h1>
+        <img src="{{user.getProfilePicture()}}" alt="">
+        <article>
+            {{user.getUserDescription()}}
+        </article>
+    </center>
+</body>
+</html>

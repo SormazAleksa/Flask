@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List in list</title>
+</head>
+
+<body>
+
+    <table>
+        <thead>
+            <th>Ime i prezime:</th>
+            <th>Fakultet:</th>
+            <th>Indeks</th>
+        </thead>
+        <tbody>
+            {% for student in student_list %}
+            <tr>
+                {% for data in student %}
+                <th>{{data}}</th>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+    <style>
+        table {
+            width: 100%;
+        }
+    
+        tbody tr:hover {
+            background-color: bisque;
+        }
+    
+        tbody tr:nth-child(odd) {
+            color: lightgray;
+        }
+    </style>
+</head>
+
+<body>
+    
+    {{user_list}}
+
+    <table border="1" style="border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th>Username: </th>
+                <th>Picture path: </th>
+                <th>Description: </th>
+                <th>Profile: </th>
+                <th colspan="2">Options: </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in user_list %}
+            <tr>
+                <th>{{user.getUserName()}}</th>
+                <th><img src="{{user.getProfilePicture()}}" width="100px" height="100px" alt=""></th>
+                <th>{{user.getUserDescription()}}</th>
+                <th><a href="/profiles/{{user.get_username()}}"></a></th>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>
