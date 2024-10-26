@@ -1,0 +1,25 @@
+
+
+SQL je jezik za manipulacijom baze podataka, mozemo da ga koristimo za dodavanje novih redova, filtriranje, za odabir odredjnog reda podataka itd
+
+
+ako zelimo da dodamo neki red u bazu onda koristimo INSERT
+
+                                 id
+INSERT INTO naziv_tabele VALUES (null, "vrednost_kolona1", vrednost_kolona2)
+moramo da pratimo redosled kolona koji se nalazi u tabeli
+
+Ako samo zelimo da izaberemo odredjene vrednosti ili sve onda koristimo SELECT
+
+* -> oznacava sve
+
+SELECT * FROM proizvod
+treba da imamo promenljivu koja ce cuvati dohvacene podatke
+
+podaci = cursor.fetchall() | cursor.fetchone() -> ako zelimo da dohvatimo samo jedan podatak
+
+
+Za SELECT takodje mozemo i da koristimo WHERE i da na osnovu neke vrednosti dohvatimo red podataka
+
+SELECT * FROM proizvod WHERE id={id}
+

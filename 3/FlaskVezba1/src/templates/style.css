@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Linux+Libertine:wght@400;700&display=swap');
+
+body {
+    font-family: 'Linux Libertine', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+header {
+    background-color: #ececec;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    display: flex;
+    margin: 20px;
+}
+
+.sidebar {
+    width: 20%;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-right: 1px solid #ccc;
+}
+
+.sidebar h3 {
+    margin-top: 0;
+}
+
+.split-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.split-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.split-list ul li {
+    margin-bottom: 10px;
+}
+
+.split-list ul li a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+split-list ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    width: 75%;
+    padding: 20px;
+}
+
+main h2 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+footer {
+    background-color: #ececec;
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+img.image {
+    width: 45%;
+    height: auto;
+}

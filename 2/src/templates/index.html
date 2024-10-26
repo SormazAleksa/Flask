@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+</head>
+<body>
+    <a href="/src/templates/new_product.html"><button>Dodaj proizvod</button></a>
+    <a href="/src/templates/all_products.html"><button>Svi proizvodi</button></a>
+
+    <br>
+    
+    <br>
+    {{ime}}
+    <p> Hello, World! from Home Page </p>
+    
+    
+    {% if ime == 'Pera' %}
+    <p>
+        Vase ime je Pera
+    </p>
+    
+    <!-- elif -->
+    {% else %}
+    <p>
+        Vase ime nije Pera
+    </p>
+    {% endif %}
+    <hr>
+    <p>
+        Ime studenta: {{ student['ime'] }}
+    </p>
+    <p>
+        Prezime studenta: {{student['prezime']}}
+    </p>
+    <hr>
+    <pre>
+    			{{lista_predmeta}}
+    		</pre>
+    <h2>Lista predmeta</h2>
+    <ul>
+        {% for predmet in lista_predmeta %}
+        <li>
+            {{predmet}}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
