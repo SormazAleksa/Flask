@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prikaz svih zaposlenih</title>
+    <style>
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        tr, td {
+            border: 1px solid black;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Prikaz zaposlenih</h1>
+
+    {% if 'username' in session %}
+    <a href="/logout">Odjava</a>
+    <a href="/dodaj_zaposlenog">Dodaj zaposlenog</a>
+    {% else %}
+    <a href="/login">Login</a>
+    <a href="/registracija">Registruj se</a>
+    {% endif %}
+    <hr>
+
+    <form method="post" action="pretraga_po_jmbg">
+        <label>Unesite JMBG:</label>
+        <input type="text" name="jmbg">
+        <input type="submit" value="Pretraga">
+    </form>
+    <hr>
+
+    <form method="post" action="/pretraga_po_broju_radnih_sati">
+        <label>Unesite broj radnih sati za pretragu:</label>
+        <input type="number" name="broj_radnih_sati">
+        <input type="submit">Pretraga
+    </form>
+    <hr>
+
+    <form method="post" action="/pretraga_po_poziciji">
+        <label>Pretraga po poziciji</label>
+        <input type="text" name="pozicija">
+        <input type="submit">Pretraga
+    </form>
+    <hr>
+
+    <pre>{{ zaposleni }}</pre>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Ime i prezime</th>
+                <th>JMBG</th>
+                <th>Broj radnih sati</th>
+                <th>Pozicija</th>
+                {% if 'username' in session %}
+                    <th>Opcije</th>
+                {% endif %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in zaposleni %}
+                <tr>
+                    <td>{{ zaposleni[i].get_jmbg() }}</td>
+                    <td>{{ zaposleni[i].get_ime_prezime() }}</td>
+                    <td>{{ zaposleni[i].get_broj_radnih_sati() }}</td>
+                    <td>{{ zaposleni[i].get_pozicija() }}</td>
+                    {% if 'username' in session %}
+                        <td>
+                            <form action="/obrisi_zaposlenog" method="post">
+                                <input type="hidden" name="jmbg_zaposlenog" value="{{ zaposleni[i].get_jmbg() }}">
+                                <button>Obrisi</button>
+                            </form>
+                        </td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

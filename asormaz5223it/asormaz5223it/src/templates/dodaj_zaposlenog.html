@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodavanje zaposlenih</title>
+    <style>
+        span {
+            color: red;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dodavanje zaposlenih</h1>
+
+    <form method="post" action="">
+
+        <span>{{ greska }}</span>
+
+        <p>
+            <label for="">Unesite JMBG:</label>
+            <input type="text" name="jmbg">
+        </p>
+
+        <p>
+            <label for="">Unesite ime i prezime:</label>
+            <input type="text" name="ime_prezime">
+        </p>
+
+        <p>
+            <label for="">Unesite email:</label>
+            <input type="text" name="email">
+        </p>
+
+        <p>
+            <label for="">Unesite broj radnih sati:</label>
+            <input type="number" name="broj_radnih_sati">
+        </p>
+
+        <p>
+            <label for="">Unesite poziciju:</label>
+            <input type="text" name="pozicija">
+        </p>
+
+        <input type="submit" value="Unesite zaposlenog">
+
+    </form>
+
+</body>
+</html>

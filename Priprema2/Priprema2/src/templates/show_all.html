@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show all stranica</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        tr, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<h1>Show all stranica</h1>
+
+{% if 'username' in session %}
+<a href="/logout">Logout</a>
+<a href="/dodaj_projekat"><button>Dodaj projekat</button></a>
+{% else %}
+<a href="/login">Login</a>
+<a href="/register">Registracija</a>
+{% endif %}
+<hr>
+
+<form action="/pretraga_ime_prezime" method="POST">
+    <label for="">Unesite ime ili prezime za pretragu</label>
+    <input type="text" name="ime_prezime" id="">
+    <input type="submit" value="Pretraga">
+</form>
+
+<hr>
+
+<pre>
+        {{projects}}
+    </pre>
+
+<table>
+    <thead>
+    <tr>
+        <th>Sifra projekta</th>
+        <th>Naziv projekta</th>
+        <th>Budzet</th>
+        <th>Trajanje</th>
+        <th>Opis</th>
+        {% if 'username' in session %}
+        <th>Opcije</th>
+        {% endif %}
+    </tr>
+    </thead>
+    <tbody>
+    {% for project in projects %}
+    <tr>
+        <td>{{projects.get_sifra_projekta()}}</td>
+        <td>{{projects.get_naziv()}}</td>
+        <td>{{projects.get_budzet()}}</td>
+        <td>{{projects.get_trajanje()}}</td>
+        <td>{{projects.get_opis()}}</td>
+        {% if 'username' in session %}
+        <td>
+            <form action="/obrisi_projekat" method="post">
+                <!-- posto je ovo post method -> moramo na neki nacin da posaljemo sifru takmicara kog zelimo da obrisemo -->
+                <input type="hidden" name="sifra_projekta" value="{{projects.get_sifra_projekta()}}">
+                <button>Obrisi</button>
+            </form>
+        </td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

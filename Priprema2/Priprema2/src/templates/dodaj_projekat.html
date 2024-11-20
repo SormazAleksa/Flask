@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodavanje novog projekta</title>
+    <style>
+        span {
+            color: red;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dodavanje novog projekta</h1>
+
+    <form action="" method="POST">
+        <span>{{greska}}</span>
+        <p>
+            <label for="">Unesite sifru projekta</label>
+            <input type="number" name="sifra_projekta" id="">
+        </p>
+
+        <p>
+            <label for="">Unesite naziv projekta</label>
+            <input type="text" name="naziv" id="">
+        </p>
+
+        <p>
+            <label for="">Unesite budzet</label>
+            <input type="number" name="budzet" step="0.1" id="">
+        </p>
+
+        <p>
+            <label for="">Unesite trajanje</label>
+            <input type="number" name="tezina" step="0.1" id="">
+        </p>
+
+        <p>
+            <label for="">Unesite opis</label>
+            <textarea name="opis" id="" cols="30" rows="10"></textarea>
+        </p>
+
+        <p>
+            <button>Dodaj</button>
+        </p>
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        span {
+            color: red;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <h1>Register</h1>
+
+    <form action="" method="post">
+        <span>{{greska}}</span>
+        <p>
+            <label for="">Unesite ime i prezime</label>
+            <input type="text" name="ime_prezime" id="">
+        </p>
+        
+        <p>
+            <label for="">Unesite email</label>
+            <input type="text" name="email">
+        </p>
+
+        <p>
+            <label for="">Unesite password</label>
+            <input type="password" name="password" id="">
+        </p>
+
+        <p>
+            <label for="">Ponovite password</label>
+            <input type="password" name="repeat_password" id="">
+        </p>
+
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
